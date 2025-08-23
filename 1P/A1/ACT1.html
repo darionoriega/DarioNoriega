@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <metah http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+   <title>Can he see or is he blind</title>
+   <link rel="icon" type="image/png" href="IronSpray.png">
+   <link rel="shortcut icon" href="IronSpray.png" type="image/png">
+ </head>
+ <style>
+    body {
+       background-color:rgb(250, 135, 135);
+     }
+     h1 {
+       color:royalblue;
+       text-align: center;
+       font-family: "Marvel", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+     }
+     h2 {
+       color:royalblue;
+       text-align: center;
+       font-family: "Marvel", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+     }
+     p {
+       text-align: center;
+       font-family: "Marvel", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+     }
+     .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+     }
+     img{
+        border-radius: 0.5rem;
+     }
+ </style>
+ <body>
+    <h1>I'm Iron Maning it, oh I'm Iron Maning it</h1>
+    <div class= "image-container">
+        <div class="image-wrapper">
+                <div>
+                <img src="Jarvismeme.gif" alt="IRON" class="center">
+                </div>
+                <div>
+                <img src="IronDance.gif" alt="DANCE" class="center">
+                </div>
+                <div>
+                <img src="ActivateFreak.gif" alt="FREAKY" class="center">
+                </div>
+                <div>
+                <img src="Cooking.gif" alt="Cooking">
+                </div>
+                <div>
+                <img src="Beam.gif" alt="Beam" class="center">
+                </div>
+                <div>
+                <img src="MaximumPulse.gif" alt="Pulse" class="center">
+                </div>
+                <div>
+                <img src="MVP.gif" alt="MVP">
+                </div>
+            </div>
+        </div>
+    <h2>She Charge on my Pulse 'till I FIRE </h2>
+    <p> Bottom Text </p>
+    <script>
+        const imageWrapper = document.querySelector('.image-wrapper')
+        const imageItems = document.querySelectorAll('.image-wrapper > *')
+        const imageLength = imageItems.length
+        const perView = 3
+        let totalScroll = 0
+
+        imageWrapper.style.setProperty('--per-View', perView)
+        for(let i = 0; i < perView; i++){
+            imageWrapper.insertAdjacentHTML('beforeend', imageItems[i].outerHTML)
+        }
+
+        let autoScroll = setInterval(scrolling, 1000)
+
+        function scrolling(){
+            totalScroll++
+            if(totalScroll == imageLength + 1){
+                clearInterval(autoScroll)
+                totalScroll = 1
+                imageWrapper.style.transition = '0s'
+                imageWrapper.style.left = '0'
+                autoScroll = setInterval(scrolling, 1000)
+            }
+            const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24
+            imageWrapper.style.left = `-${totalScroll * widthEl}px`
+            imageWrapper.style.transition = '.3s'
+        }
+    </script>
+ </body>
+</html>

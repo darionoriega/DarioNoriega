@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marvel:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+   <title>Can he see or is he blind</title>
+ </head>
+ <style>
+    body {
+       background-color:lightskyblue;
+     }
+     h1 {
+       color:royalblue;
+       text-align: center;
+       font-family: "Marvel", sans-serif;
+       font-weight: 400;
+       font-style: normal;
+     }
+     p {
+       font-family: verdana;
+       font-size: 20px;
+     }
+ </style>
+ <body>
+    <h1>I'm Iron Maning it, oh I'm Iron Maning it</h1>
+    <h2>She Charge on my Pulse 'till I FIRE </h2>
+    <p> Bottom Text </p>
+ </body>
+</html>

@@ -1,0 +1,15 @@
+    body {
+        background-color:#ece2ca;
+        text-align: center;
+    }
+    h1{
+        color: #000000;
+    }
+    h2 {
+        color:#8c2ba7;
+        font-variant: small-caps;
+    }
+    p {
+        color:#123456;
+        font-size: 40px;
+    }

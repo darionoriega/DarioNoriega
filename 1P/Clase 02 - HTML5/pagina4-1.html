@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pagina 4</title>
+  <style>
+      canvas{
+          border: 3px solid brown;
+          background-color: white;
+      }
+  </style>
+
+<script>
+    //window.onload=function(){}
+    var x = 0;
+    var y = 0;
+    var dx = 5;
+    var dy = 3
+    function animate(){
+        requestAnimationFrame(animate);
+        console.log('animando');var canvas = document.getElementById("micanvas");
+        var context = canvas.getContext("2d");
+        context.clearRect(0, 0, innerWidth, innerHeight)
+        context.fillStyle = "red";
+        context.fillRect(10, 10, 200, 100);
+        context.fillStyle = "blue";
+        context.fillRect(210, y, 100, 200);
+        context.fillStyle = "rgba(0, 255, 0, 0.5)";
+        context.fillRect(x, y, 100, 200);
+
+        context.font = '100px Calibri';
+        context.fillStyle = 'purple';
+        context.fillText("Peppino Spaghetti", x, 100);
+
+        if (x > 800 - 100 || x < 0){
+          dx= -dx;
+        }
+        if (y > 600 - 200 || y < 0){
+          dy = -dy;
+        }
+        x+=dx;
+        y+=dy;
+
+    }
+    animate();
+</script>
+
+  </head>
+<body>
+   <canvas id="micanvas" width="800" height="600"></canvas>
+</body>
+</html>
