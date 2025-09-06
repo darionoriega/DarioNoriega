@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <title>Interactividad</title>
+</head>
+<style>
+  body{
+    background-image: url(PizzaBack.png);
+    text-align: center;
+    font-family: "Chewy";
+  }
+  img {
+    max-width: 960px;
+    display: none;
+
+  }
+  canvas {
+    border: 2px solid #ffffff;
+    background-color: #a360fb;
+  }
+  .chewy-regular {
+  font-family: "Chewy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+h1 {
+  color: #ffffff;
+}
+#textDisplay {
+  color: #ffffff;
+  font-size: 40px;
+}
+
+
+</style>
+<body>
+    <script>
+      var Pizza = new Image();
+      Pizza.src = "Prank.webp"
+      var Super = new Image();
+      Super.src = "Srank.webp"
+      var Amazing = new Image();
+      Amazing.src = "Arank.webp"
+      var Bad = new Image();
+      Bad.src = "Brank.webp"
+      var Crap = new Image();
+      Crap.src = "Crank.webp"
+      var Distasteful = new Image();
+      Distasteful.src = "Drank.webp";
+
+        window.onload = function(){
+          function onKeyboardEvent (event) {
+            let textToShow = "";
+            var canvas = document.getElementById("micanvas");
+            var context = canvas.getContext("2d");
+            var textDisplay = document.getElementById("textDisplay");
+
+            switch (event.keyCode) {
+          case 80:
+            context.drawImage(Pizza, 0, 0, 960, 540);
+            textToShow = "P E R F E C T!!";
+          break;
+          case 83:
+            context.drawImage(Super, 0, 0, 960, 540);
+            textToShow = "SUPER!";
+          break;
+            case 65:
+            context.drawImage(Amazing, 0, 0, 960, 540);
+            textToShow = "Amazing";
+          break;
+           case 66:
+            context.drawImage(Bad, 0, 0, 960, 540);
+            textToShow = "bad";
+          break;
+        case 67:
+          context.drawImage(Crap, 0, 0, 960, 540);
+          textToShow = "crap";
+          break;
+        case 68:
+          context.drawImage(Distasteful, 0, 0, 960, 540);
+          textToShow = "distasteful";
+          break;
+        default:
+          console.log(event.keyCode);
+        }
+        textDisplay.textContent = textToShow;
+      }
+      window.addEventListener('keydown', onKeyboardEvent, false);
+        } 
+    </script>
+    <!-- Content of your webpage goes here -->
+    <h1> Rangos del Pizza Tower! </h1>
+    <canvas id="micanvas" width="960" height="540"></canvas>
+    <div id="textDisplay">Presiona P, S, A, B, C ó D</div>
+  </body>
+</html>
